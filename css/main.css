@@ -114,14 +114,14 @@ a {
   background-color: var(--primary-current-color);
 }
 
-.social-link:hover .social-icon,
-.social-link:focus .social-icon {
-  fill: #ffffff;
-}
-
 .social-icon {
   fill: var(--primary-icon-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: #ffffff;
 }
 
 .social-list {
@@ -139,16 +139,7 @@ a {
   margin-right: 0px;
 }
 
-.logo-white {
-  color: #ffffff;
-  font-family: "Raleway";
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-}
-
-.logo-blue {
+.logo {
   color: var(--primary-logo-blue);
   font-family: "Raleway";
   font-weight: 700;
@@ -157,13 +148,12 @@ a {
   letter-spacing: 0.03em;
 }
 
+.logo-white {
+  color: #ffffff;
+}
+
 .logo-dark {
   color: var(--primary-logo-dark);
-  font-family: "Raleway";
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
 }
 
 .join-container {
@@ -210,14 +200,14 @@ a {
   background-color: var(--primary-current-color);
 }
 
-.join-link .join-icon,
-.join-link .join-icon {
-  fill: #fff;
-}
-
 .join-icon {
   fill: #fff;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.join-link:hover .join-icon,
+.join-link:focus .join-icon {
+  fill: #fff;
 }
 
 .footer-subscribe-button {
@@ -309,14 +299,14 @@ a {
   padding: 40px;
 }
 
-.modal-close-icon {
-  fill: currentColor;
-  cursor: pointer;
-}
-
 .backdrop.is-hidden .modal {
   transform: rotate(200deg);
   transition: transform 500ms cubic-bezier(1, -0.84, 0.23, -0.94);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+  cursor: pointer;
 }
 
 .modal-form {
@@ -471,7 +461,7 @@ a {
   border-bottom: 1px solid var(--primary-border-color);
 }
 
-.header-container {
+.header__container {
   display: flex;
   align-items: center;
 }
@@ -503,11 +493,22 @@ a {
   color: var(--primary-current-color);
 }
 
-.nav__link.current {
+.nav__link__current {
   color: var(--primary-current-color);
 }
 
-.header-connect {
+.nav__link__current::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  border-radius: 2px;
+  bottom: -32px;
+  display: block;
+  background-color: var(--primary-current-color);
+}
+
+.contacts {
   margin-left: auto;
   display: flex;
 }
@@ -527,33 +528,19 @@ a {
   color: var(--primary-current-color);
 }
 
-.connect__link:hover .connect__icon,
-.connect__link:focus .connect__icon {
-  fill: var(--primary-current-color);
-}
-
-.connect__contacts:not(:last-child) {
+.contacts__item:not(:last-child) {
   margin-right: 50px;
 }
 
 .connect__icon {
-  fill: #757575;
-}
-
-.connect__icon {
   margin-right: 10px;
+  fill: #757575;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav__link.current::after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  position: absolute;
-  border-radius: 2px;
-  bottom: -32px;
-  display: block;
-  background-color: var(--primary-current-color);
+.connect__link:hover .connect__icon,
+.connect__link:focus .connect__icon {
+  fill: var(--primary-current-color);
 }
 
 .main {
@@ -760,6 +747,10 @@ a {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.customers-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .customers-item:hover, .customers-item:focus {
   border-color: #2196f3;
 }
@@ -776,10 +767,6 @@ a {
 
 .customers-link:hover, .customers-link:focus {
   fill: #2196f3;
-}
-
-.customers-item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .footer {
@@ -895,16 +882,8 @@ a {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.photo-list:hover .photo-text {
-  transform: translateY(0);
-}
-
 .photo-link {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.photo-link:focus .photo-text {
-  transform: translateY(0);
 }
 
 .photo-link:hover, .photo-link:focus {
@@ -931,6 +910,14 @@ a {
   height: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-list:hover .photo-text {
+  transform: translateY(0);
+}
+
+.photo-link:focus .photo-text {
+  transform: translateY(0);
 }
 
 .portfolio-description {

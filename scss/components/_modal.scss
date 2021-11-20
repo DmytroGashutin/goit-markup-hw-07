@@ -10,12 +10,13 @@
   transition: transform 500ms cubic-bezier(1, -0.84, 0.23, -0.94);
 
   padding: 40px;
+
+  .backdrop.is-hidden & {
+    transform: rotate(200deg);
+    transition: transform 500ms cubic-bezier(1, -0.84, 0.23, -0.94);
+  }
 }
 .modal-close-icon {
   fill: currentColor;
   cursor: pointer;
-}
-.backdrop.is-hidden .modal {
-  transform: rotate(200deg);
-  transition: transform 500ms cubic-bezier(1, -0.84, 0.23, -0.94);
 }
